@@ -32,6 +32,7 @@
 #include <net-snmp/agent/net-snmp-agent-includes.h>
 #include <net-snmp/agent/snmp_vars.h>
 #include <net-snmp/agent/util_funcs.h>
+#include <net-snmp/agent/agent_callbacks.h>
 #undef FREE
 
 #include "list.h"
