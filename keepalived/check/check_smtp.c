@@ -215,6 +215,8 @@ smtp_timeout_handler(vector strvec)
 {
 	smtp_checker *smtp_chk = CHECKER_GET();
 	smtp_chk->timeout = CHECKER_VALUE_INT(strvec) * TIMER_HZ;
+	if (smtp_chk->timeout < TIMER_HZ)
+		smtp_chk->timeout = TIMER_HZ;
 }
 
 /* "retry" keyword */
