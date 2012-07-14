@@ -36,7 +36,7 @@ AC_ARG_ENABLE(debug,
 AC_ARG_ENABLE(profile,
   [  --enable-profile        compile with profiling flags])
 AC_ARG_ENABLE(snmp,
-  [  --disable-snmp          do not compile SNMP support])
+  [  --enable-snmp           compile with SNMP support])
 
 dnl ----[ Checks for header files ]----
 AC_HEADER_STDC
@@ -190,7 +190,7 @@ AC_SUBST(VRRP_SUPPORT)
 
 dnl ----[ Checks for SNMP support ]----
 SNMP_SUPPORT="_WITHOUT_SNMP_"
-if test "$enable_snmp" != "no"; then
+if test "$enable_snmp" = "yes"; then
     AC_PATH_TOOL([NETSNMP_CONFIG], [net-snmp-config], [no])
     if test x"$NETSNMP_CONFIG" = x"no"; then
       AC_MSG_ERROR([unable to find net-snmp-config])

@@ -1316,7 +1316,7 @@ Optional Features:
   --disable-vrrp          do not use the VRRP framework
   --enable-debug          compile with debugging flags
   --enable-profile        compile with profiling flags
-  --disable-snmp          do not compile SNMP support
+  --enable-snmp           compile with SNMP support
 
 Optional Packages:
   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
@@ -4088,7 +4088,7 @@ fi
 
 
 SNMP_SUPPORT="_WITHOUT_SNMP_"
-if test "$enable_snmp" != "no"; then
+if test "$enable_snmp" = "yes"; then
     if test -n "$ac_tool_prefix"; then
   # Extract the first word of "${ac_tool_prefix}net-snmp-config", so it can be a program name with args.
 set dummy ${ac_tool_prefix}net-snmp-config; ac_word=$2
